@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Color" representedClassName="Color" syncable="YES">
+        <attribute name="colorCategory" optional="YES" attributeType="String"/>
+        <attribute name="colorPaletteImage" optional="YES" attributeType="String"/>
+        <attribute name="tentativeColorDescription" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Content" representedClassName="Content" syncable="YES">
+        <attribute name="contentCategory" optional="YES" attributeType="String"/>
+        <attribute name="contentDescription" optional="YES" attributeType="String"/>
+        <attribute name="contentImage" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Style" representedClassName="Style" syncable="YES">
+        <attribute name="styleCategory" optional="YES" attributeType="String"/>
+        <attribute name="styleDescription" optional="YES" attributeType="String"/>
+        <attribute name="styleReferenceImage" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Color" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="Content" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="Style" positionX="-36" positionY="9" width="128" height="74"/>
+    </elements>
+</model>
