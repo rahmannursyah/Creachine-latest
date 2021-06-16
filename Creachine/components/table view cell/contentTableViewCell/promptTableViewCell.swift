@@ -27,7 +27,7 @@ class promptTableViewCell: UITableViewCell {
 	var imagesToAnimate: [UIImage]!
 	var animatedImages: UIImage!
 	
-	//logic untuk animasi
+	//logic untuk animasi blink
 	public func animateImages(){
 		loading_1 = UIImage(named: "blink-1")
 		loading_2 = UIImage(named: "blink-2")
@@ -37,36 +37,60 @@ class promptTableViewCell: UITableViewCell {
 		
 		animatedImages = UIImage.animatedImage(with: imagesToAnimate, duration: 0.8)
 		lightAnimation.image = animatedImages
-		DispatchQueue.main.asyncAfter(deadline: .now()+1.1){
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1.1){
 			self.lightAnimation.image = UIImage(named: "Group 143")
 		}
 	}
 	
 	@IBAction func isLockButtonPressed(_ sender: Any) {
-		if isActive {
-			isActive = false
-			lockButton.setImage(UIImage(systemName: "lock.open.fill"), for: .normal)
-		} else {
-			isActive = true
-			lockButton.setImage(UIImage(systemName: "lock.fill"), for: .normal)
-		}
+        if isActive {
+            isActive = false
+            lockUnlockValidation(flag: false)
+        } else {
+            isActive = true
+            lockUnlockValidation(flag: true)
+        }
 	}
     
+    public func lockUnlockValidation(flag: Bool){
+        if flag == true {
+            // tapped lock symbol
+            lockButton.setImage(UIImage(systemName: "lock.fill"), for: .normal)
+            contentHeaderLabel.textColor = .white
+            contentHeaderView.backgroundColor = .black
+            lockButton.tintColor = .white
+            lightAnimation.isHidden = true
+            
+            contentSpinAnimationView.alpha = 0
+        } else {
+            lockButton.setImage(UIImage(systemName: "lock.open.fill"), for: .normal)
+            contentHeaderLabel.textColor = .black
+            contentHeaderView.backgroundColor = UIColor(red: 128/255, green: 199/255, blue: 190/255, alpha: 1)
+            lockButton.tintColor = .black
+            lightAnimation.isHidden = false
+            
+            contentSpinAnimationView.alpha = 1
+        }
+    }
+    
+    // when set idea button is tapped, lock button for every section is enabled
+    public func lockSetIdea(flag: Bool){
+        if flag == true {
+            // tapped "Set Idea" button
+            lockButton.isEnabled = false
+            contentSpinAnimationView.alpha = 0
+        }
+        else if flag == false {
+            lockButton.isEnabled = true
+            contentSpinAnimationView.alpha = 1
+            contentSpinAnimationView.isHidden = true
+        }
+    }
+    
   //MARK: -SPIN BLUR ANIMATION PNG IMAGE
-   // public func slotAnimate(){
-        
-        //if isTapped == true{
-        
-        //for index in 0 ... 0 {
-        
-//            let imageView = cell.contentSpinAnimationView
-//                imageView?.image = UIImage.animatedImageNamed("2Style30ms-", duration: 1.0)
-//                imageView?.startAnimating()
             
        public func animation_0(){
-        
             contentSpinAnimationView.image = UIImage.animatedImageNamed("2Content10ms-", duration: 0.80)
-                
             contentSpinAnimationView.isHidden = false
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
@@ -74,101 +98,22 @@ class promptTableViewCell: UITableViewCell {
             }
           
         }
-        //}
-        //for index in 1 ... 1 {
         public func animation_1(){
             contentSpinAnimationView.image = UIImage.animatedImageNamed("2Color20ms-", duration: 0.90)
-                
             contentSpinAnimationView.isHidden = false
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 self.contentSpinAnimationView.isHidden = true
             }
         }
-        //for index in 2 ... 2 {
         
     public func animation_2(){
             contentSpinAnimationView.image = UIImage.animatedImageNamed("2Style30ms-", duration: 1.0)
-                
             contentSpinAnimationView.isHidden = false
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 self.contentSpinAnimationView.isHidden = true
             }
         }
-        //}
         
-    //}
-    
-//        //MARK: - sequence animation
-//        func sequenceAnimation_0() {
-//
-//                UIView.animate(
-//                    withDuration: 0,
-//                    delay: 0,
-//                    options: .curveEaseOut,
-//                    animations: ({
-//
-//                        self.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
-//                        self.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-//                    })
-//                    , completion: { _ in
-//                        UIView.animate(
-//                            withDuration: 0.5,
-//                            delay: 0.50,
-//                                options: .curveEaseIn,
-//                                animations: {
-//                                    self.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)///y: 100
-//                                    self.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)///y: 60
-//                            })
-//                    })
-//
-//        }
-//        func sequenceAnimation_1(cell: promptTableViewCell) {
-//            
-//                UIView.animate(
-//                    withDuration: 0,
-//                    delay: 0,
-//                    options: .curveEaseOut,
-//                    animations: ({
-//
-//                        cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
-//                        cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-//                    })
-//                    , completion: { _ in
-//                        UIView.animate(
-//                            withDuration: 0.5,
-//                            delay: 0.60,
-//                                options: .curveEaseIn,
-//                                animations: {
-//                                    cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
-//                                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-//                            })
-//                    })
-//            
-//        }
-//        func sequenceAnimation_2(cell: promptTableViewCell) {
-//            
-//                UIView.animate(
-//                    withDuration: 0,
-//                    delay: 0,
-//                    options: .curveEaseOut,
-//                    animations: ({
-//
-//                        cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
-//                        cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-//                    })
-//                    , completion: { _ in
-//                        UIView.animate(
-//                            withDuration: 0.5,
-//                            delay: 0.70,
-//                                options: .curveEaseIn,
-//                                animations: {
-//                                    cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
-//                                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-//                            })
-//                    })
-//            
-//        }
-
 }

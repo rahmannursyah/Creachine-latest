@@ -41,9 +41,70 @@ class ViewController: UIViewController, UITableViewDataSource{
 	
 	@IBOutlet weak var randomizeButton: UIButton!
 	@IBOutlet weak var setIdeaButton: UIButton!
-	@IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var setIdeaLabel: UILabel!
+    @IBOutlet weak var filterButton: UIButton!
 	
+    var isSetIdeaTapped: Bool = true
 	@IBAction func setIdea(_ sender: Any) {
+        if isSetIdeaTapped {
+            // tapped "Set Idea" button
+            setIdeaButton.backgroundColor = .white
+            setIdeaButton.tintColor = .black
+            for index in 0 ... 2 {
+                let cell = promptTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! promptTableViewCell
+                cell.lockUnlockValidation(flag: true)
+                cell.isActive = true
+                cell.lockSetIdea(flag: true)
+            }
+            
+            isSetIdeaTapped = false
+            randomizeButton.isHidden = true
+            setIdeaLabel.text = "Unset Idea"
+            setIdeaLabel.textColor = .black
+            
+            setIdeaButton.layer.borderWidth = 4
+            setIdeaButton.layer.shadowOffset = CGSize(width: 0, height: 5)
+            setIdeaButton.layer.shadowOpacity = 0.3
+            setIdeaButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            
+            // MARK: - Backsound Set Idea
+            let urlString = Bundle.main.path(forResource: "audio-end", ofType: "wav")
+
+            do{
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+
+                guard let urlString = urlString else{
+                    return
+                }
+
+                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+
+                guard let player = player else{
+                    return
+                }
+
+                player.play()
+            }
+            catch{
+                print ("something wrong with the sound :(")
+            }
+        }
+        else {
+            setIdeaButton.backgroundColor = .black
+            setIdeaButton.tintColor = .white
+            
+            for index in 0 ... 2 {
+                let cell = promptTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! promptTableViewCell
+                cell.lockUnlockValidation(flag: false)
+                cell.isActive = false
+                cell.lockSetIdea(flag: false)
+            }
+            isSetIdeaTapped = true
+            randomizeButton.isHidden = false
+            setIdeaLabel.text = "Set Idea"
+            setIdeaLabel.textColor = .white
+        }
 	}
     
     var isTapped: Bool = false
@@ -66,7 +127,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 	var isClicked = false
 	
 	@IBAction func randomize(_ sender: UIButton) {
-		
+        generateRandomNumber()
 		isClicked = true
 		
 		filterContentData()
@@ -87,16 +148,13 @@ class ViewController: UIViewController, UITableViewDataSource{
 				numbers[index] = Int.random(in: 0..<styleContainer.count)
 			}
 			
-			
         }
-        print (numbers)
+        //print (numbers)
         isTapped = true
-//        slotAnimate()
         promptTableView.reloadData()
-        ///problem: cell have to be clicked first
-    
-        // MARK: - sound
-        let urlString = Bundle.main.path(forResource: "audio", ofType: "wav")
+        
+        // MARK: - Backsound Randomize
+        let urlString = Bundle.main.path(forResource: "audio", ofType: "m4a")
 
         do{
             try AVAudioSession.sharedInstance().setMode(.default)
@@ -118,17 +176,23 @@ class ViewController: UIViewController, UITableViewDataSource{
             print ("something wrong :(")
         }
     }
+    
+    public func generateRandomNumber(){
+        for index in 0...2 {
+            numbers[index] = Int.random(in: 0..<10)
+        }
+        print (numbers)
+        isTapped = true
+        promptTableView.reloadData()
+    }
+    
 //    MARK: - Variables
         var player: AVAudioPlayer?
         
 //    MARK: - Actions
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		
-//		let filterButton = openFilterButton(frame: CGRect(x: 248, y: 130, width: 102, height: 32))
-//		view.addSubview(filterButton)
-//		filterButton.configure(with: openfilterButtonViewModel(text: "Filter off", icon: UIImage(systemName: "line.horizontal.3.decrease.circle.fill"), backgroudColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
+        generateRandomNumber()
         
 		contentContainer = contentData
 		colorContainer = colorData
@@ -161,18 +225,13 @@ class ViewController: UIViewController, UITableViewDataSource{
 		
         //Register
 		let contentNib = UINib(nibName: "\(promptTableViewCell.self)", bundle: nil)
-		
 		self.promptTableView.register(contentNib, forCellReuseIdentifier: "contentCell")
 	}
 	
     //MARK: -SETUP TABLEVIEW
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return 3
-	}
+	func numberOfSections(in tableView: UITableView) -> Int { return 3 }
 	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
-	}
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { return 1 }
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "contentCell") as! promptTableViewCell
@@ -191,60 +250,67 @@ class ViewController: UIViewController, UITableViewDataSource{
         //MARK: CUSTOMIZE CELL: HEADER TEXT
 		if indexPath.section == 0 {
 			cell.contentHeaderLabel.text = "Content"
-//			cell.detailImageView.image = pics[numbers[0]]
-//			cell.contentRandomLabel.text = labels[numbers[0]]
+            
+            if cell.isActive == false{
 			cell.detailImageView.image = UIImage(named: contentContainer[numbers[0]].contentReferenceImage ?? "error")
 			cell.contentRandomLabel.text = contentContainer[numbers[0]].contentDescription
+            }
 		} else if indexPath.section == 1{
 			cell.contentHeaderLabel.text = "Color"
-//			cell.detailImageView.image = pics[numbers[1]]
-//			cell.contentRandomLabel.text = labels[numbers[1]]
+            
+            if cell.isActive == false{
             cell.detailImageView.image = UIImage(named: colorContainer[numbers[1]].colorPaletteImage ?? "error")
 			cell.contentRandomLabel.text = colorContainer[numbers[1]].colorDescription
+            }
 		} else {
 			cell.contentHeaderLabel.text = "Style"
-//			cell.detailImageView.image = pics[numbers[2]]
-//			cell.contentRandomLabel.text = labels[numbers[2]]
+            
+            if cell.isActive == false{
 			cell.detailImageView.image = UIImage(named: styleContainer[numbers[2]].styleReferenceImage ?? "error")
 			cell.contentRandomLabel.text = styleContainer[numbers[2]].styleDescription
-            //cell.animation_0()
+            }
 		}
         
         for index in 0...2{
             if index == 0 {
                 if indexPath.section == 0 {
-                    cell.animation_0()
-                    sequenceAnimation_0(cell: cell)
-                    print("animation 0")
+                    if cell.isActive == false { // button: unlock
+                        cell.animation_0()
+                        sequenceAnimation_0(cell: cell)
+                        //print("animation 0")
+                    }
                 }
                 else if indexPath.section == 1 {
-                    cell.animation_1()
-                    sequenceAnimation_1(cell: cell)
-                    print("animation 1")
+                    if cell.isActive == false {
+                        cell.animation_1()
+                        sequenceAnimation_1(cell: cell)
+                        //print("animation 1")
+                    }
                 }
                 else if indexPath.section == 2 {
-                    cell.animation_2()
-                    sequenceAnimation_2(cell: cell)
-                    print("animation 2")
+                    if cell.isActive == false {
+                        cell.animation_2()
+                        sequenceAnimation_2(cell: cell)
+                        //print("animation 2")
+                    }
                 }
             }
         }
         
-		for  value in 0...2{
-			
-			 if indexPath.section == value{
-				 if isClicked == true  {
-					 cell.animateImages()
-				 }
-			 }
-			 
-		 }
+//		for  value in 0...2{
+//
+//			 if indexPath.section == value{
+//				 if isClicked == true  {
+//					 cell.animateImages()
+//				 }
+//			 }
+//
+//		 }
 
 		return cell
-	
-    }
+}
 
-	//Filter and Delete Data Functions
+// MARK: -Filter and Delete Data Functions
 		func filterStyleData(){
 			if selectedStyle.count == 4 || selectedStyle.isEmpty {
 				styleContainer = styleData
@@ -295,139 +361,84 @@ class ViewController: UIViewController, UITableViewDataSource{
         return true
     }
 	
-    //MARK: -SPIN BLUR ANIMATION
-  
+}
+
+    //MARK: - sequence animation
+    func sequenceAnimation_0(cell: promptTableViewCell) {
+        
+        UIView.animate(
+            withDuration: 0,
+            delay: 0,
+            options: .curveEaseOut,
+            animations: ({
+
+                cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
+                cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+            })
+            , completion: { _ in
+                UIView.animate(
+                    withDuration: 0.5,
+                    delay: 0.50,
+                        options: .curveEaseIn,
+                        animations: {
+                            cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
+                            cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+                    })
+            })
+        
     }
- /*   public func slotAnimate(){
-        
-        //if isTapped == true{
-        
-        //for index in 0 ... 0 {
-            let cell_0 = promptTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! promptTableViewCell
-            sequenceAnimation_0(cell: cell_0)
 
-//            let imageView = cell.contentSpinAnimationView
-//                imageView?.image = UIImage.animatedImageNamed("2Style30ms-", duration: 1.0)
-//                imageView?.startAnimating()
-            
-        
-            cell_0.isSelected = true
-//            cell_0.contentSpinAnimationView.startAnimating()
-            cell_0.contentSpinAnimationView.image = UIImage.animatedImageNamed("2Content10ms-", duration: 0.80)
-                
-            cell_0.contentSpinAnimationView.isHidden = false
+    func sequenceAnimation_1(cell: promptTableViewCell) {
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.80){
-                cell_0.contentSpinAnimationView.isHidden = true
-            }
-        //}
-        //for index in 1 ... 1 {
-            let cell_1 = promptTableView.cellForRow(at: IndexPath(row: 0, section: 1)) as! promptTableViewCell
-            sequenceAnimation_1(cell: cell_1)
-        
-            cell_1.contentSpinAnimationView.startAnimating()
-            cell_1.contentSpinAnimationView.image = UIImage.animatedImageNamed("2Color20ms-", duration: 0.90)
-                
-            cell_1.contentSpinAnimationView.isHidden = false
+            UIView.animate(
+                withDuration: 0,
+                delay: 0,
+                options: .curveEaseOut,
+                animations: ({
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.90){
-                cell_1.contentSpinAnimationView.isHidden = true
-            }
-        //}
-        //for index in 2 ... 2 {
-            let cell_2 = promptTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as! promptTableViewCell
-            sequenceAnimation_2(cell: cell_2)
-        
-            cell_2.contentSpinAnimationView.startAnimating()
-            cell_2.contentSpinAnimationView.image = UIImage.animatedImageNamed("2Style30ms-", duration: 1.0)
-                
-            cell_2.contentSpinAnimationView.isHidden = false
+                    cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
+                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+                })
+                , completion: { _ in
+                    UIView.animate(
+                        withDuration: 0.5,
+                        delay: 0.60,
+                            options: .curveEaseIn,
+                            animations: {
+                                cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
+                                cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+                        })
+                })
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                cell_2.contentSpinAnimationView.isHidden = true
-            }
-        //}
-        //}
-        
-    } */
-    
-        //MARK: - sequence animation
-        func sequenceAnimation_0(cell: promptTableViewCell) {
-            
-                UIView.animate(
-                    withDuration: 0,
-                    delay: 0,
-                    options: .curveEaseOut,
-                    animations: ({
+    }
+    func sequenceAnimation_2(cell: promptTableViewCell) {
 
-                        cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
-                        cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-                    })
-                    , completion: { _ in
-                        UIView.animate(
-                            withDuration: 0.5,
-                            delay: 0.50,
-                                options: .curveEaseIn,
-                                animations: {
-                                    cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
-                                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-                            })
-                    })
-            
-        }
+            UIView.animate(
+                withDuration: 0,
+                delay: 0,
+                options: .curveEaseOut,
+                animations: ({
 
-        func sequenceAnimation_1(cell: promptTableViewCell) {
+                    cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
+                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
+                })
+                , completion: { _ in
+                    UIView.animate(
+                        withDuration: 0.5,
+                        delay: 0.70,
+                            options: .curveEaseIn,
+                            animations: {
+                                cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
+                                cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+                        })
+                })
 
-                UIView.animate(
-                    withDuration: 0,
-                    delay: 0,
-                    options: .curveEaseOut,
-                    animations: ({
-
-                        cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
-                        cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-                    })
-                    , completion: { _ in
-                        UIView.animate(
-                            withDuration: 0.5,
-                            delay: 0.60,
-                                options: .curveEaseIn,
-                                animations: {
-                                    cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
-                                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-                            })
-                    })
-
-        }
-        func sequenceAnimation_2(cell: promptTableViewCell) {
-
-                UIView.animate(
-                    withDuration: 0,
-                    delay: 0,
-                    options: .curveEaseOut,
-                    animations: ({
-
-                        cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
-                        cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-                    })
-                    , completion: { _ in
-                        UIView.animate(
-                            withDuration: 0.5,
-                            delay: 0.70,
-                                options: .curveEaseIn,
-                                animations: {
-                                    cell.detailImageView.frame = CGRect(x: 20, y: 28, width: 56, height: 56)
-                                    cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
-                            })
-                    })
-
-        }
+    }
 
 
 
 extension ViewController {
 	@IBAction func unwindToViewController(_ segue: UIStoryboardSegue) {
-		
 	}
 }
 
@@ -437,7 +448,7 @@ extension ViewController {
 		filterVC?.styleCategoryContainer = selectedStyle
 		filterVC?.contentCategoryContainer = selectedContent
 		filterVC?.colorCategoryContainer = selectedColor
-		print("masuk nih preparenya")
+//		print("masuk nih preparenya")
 		print(selectedContent)
 		print(selectedColor)
 		print(selectedStyle)
