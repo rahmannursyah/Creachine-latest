@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		04410CFA2677008F00909C91 /* Signika-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04410CF92677008F00909C91 /* Signika-VariableFont_wght.ttf */; };
 		04410CFF2678D37D00909C91 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04410CFE2678D37D00909C91 /* launchScreen.swift */; };
-		3620BEB32677C48C0059646C /* audio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3620BEB22677C48C0059646C /* audio.wav */; };
+		3648FF83267A42E5009F9401 /* audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3648FF82267A42E5009F9401 /* audio.m4a */; };
+		3648FF86267A42FE009F9401 /* audio-end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3648FF85267A42FE009F9401 /* audio-end.wav */; };
 		5C51FDC326771CF1001D3138 /* Creachine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C51FDC126771CF1001D3138 /* Creachine.xcdatamodeld */; };
 		5C51FDC726772313001D3138 /* lockUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C51FDC626772313001D3138 /* lockUnlock.swift */; };
 		5C56D6DE2671DD8700A3F2BC /* filterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C56D6DD2671DD8700A3F2BC /* filterViewController.swift */; };
@@ -36,7 +37,8 @@
 /* Begin PBXFileReference section */
 		04410CF92677008F00909C91 /* Signika-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		04410CFE2678D37D00909C91 /* launchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
-		3620BEB22677C48C0059646C /* audio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = audio.wav; sourceTree = "<group>"; };
+		3648FF82267A42E5009F9401 /* audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.m4a; sourceTree = "<group>"; };
+		3648FF85267A42FE009F9401 /* audio-end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "audio-end.wav"; sourceTree = "<group>"; };
 		5C51FDC226771CF1001D3138 /* Creachine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Creachine.xcdatamodel; sourceTree = "<group>"; };
 		5C51FDC626772313001D3138 /* lockUnlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockUnlock.swift; sourceTree = "<group>"; };
 		5C56D6DD2671DD8700A3F2BC /* filterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +148,8 @@
 		5CDD30B42671D71400C8011F /* filterTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				3620BEB22677C48C0059646C /* audio.wav */,
+				3648FF82267A42E5009F9401 /* audio.m4a */,
+				3648FF85267A42FE009F9401 /* audio-end.wav */,
 				5CDD30B02671D70800C8011F /* filterTableViewCell.swift */,
 				5CDD30B12671D70800C8011F /* filterTableViewCell.xib */,
 			);
@@ -245,9 +248,10 @@
 				5CD750A4266DEC1500683363 /* LaunchScreen.storyboard in Resources */,
 				5CDD30B32671D70800C8011F /* filterTableViewCell.xib in Resources */,
 				04410CFA2677008F00909C91 /* Signika-VariableFont_wght.ttf in Resources */,
+				3648FF83267A42E5009F9401 /* audio.m4a in Resources */,
 				5CD750A1266DEC1500683363 /* Assets.xcassets in Resources */,
+				3648FF86267A42FE009F9401 /* audio-end.wav in Resources */,
 				5CD7509C266DEC1400683363 /* Main.storyboard in Resources */,
-				3620BEB32677C48C0059646C /* audio.wav in Resources */,
 				5CB282B6266E212B00D75A74 /* promptTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
