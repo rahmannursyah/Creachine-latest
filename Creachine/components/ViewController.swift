@@ -15,7 +15,10 @@ import AVFoundation
 
 class ViewController: UIViewController, UITableViewDataSource{
 // MARK: - Outlets
-	@IBOutlet weak var promptTableView: UITableView!
+    
+    
+
+    @IBOutlet weak var promptTableView: UITableView!
 	@IBOutlet weak var borderView: UIView!
 	
 	@IBOutlet weak var randomizeButton: UIButton!

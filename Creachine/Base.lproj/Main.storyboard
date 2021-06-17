@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xvD-8C-AsH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xvD-8C-AsH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,106 +22,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Glass Bottom" translatesAutoresizingMaskIntoConstraints="NO" id="FaJ-Hh-mvn">
-                                <rect key="frame" x="0.0" y="675" width="390" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAS-bd-kli">
-                                <rect key="frame" x="0.0" y="117" width="390" height="727"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5a-LB-JUc">
+                                <rect key="frame" x="36" y="218" width="318" height="476"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5rA-gv-vkc">
-                                        <rect key="frame" x="36" y="596" width="68" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
-                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
-                                        <state key="normal">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="setIdea:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YM-oT-cSu"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set Idea" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDE-jm-Nyb">
-                                        <rect key="frame" x="49" y="609" width="42" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" id="X5a-LB-JUc">
-                                        <rect key="frame" x="36" y="101" width="318" height="476"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" rowHeight="154" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="yqZ-8E-6B0">
-                                                <rect key="frame" x="4" y="-31" width="310" height="502"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" rowHeight="154" id="h0J-eq-tMB">
-                                                        <rect key="frame" x="0.0" y="49" width="310" height="154"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0J-eq-tMB" id="3f2-Cp-Bbl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="310" height="154"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                            </tableView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <accessibilityTraits key="traits" image="YES" selected="YES" startsMediaSession="YES"/>
-                                        </accessibility>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55b-qG-K7O">
-                                        <rect key="frame" x="116" y="596" width="236" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.9758130908" green="0.035168237980000003" blue="0.081538580360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="24"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Randomize">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <imageReference key="image" image="arrow.triangle.2.circlepath" catalog="system" symbolScale="large"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="bold"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="randomize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HTy-tD-2rs"/>
-                                        </connections>
-                                    </button>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Long Dash" translatesAutoresizingMaskIntoConstraints="NO" id="lfg-Ns-75F">
-                                        <rect key="frame" x="36" y="71" width="317" height="5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLS-Z0-JwN">
-                                        <rect key="frame" x="251" y="56" width="102" height="32"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" rowHeight="154" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="yqZ-8E-6B0">
+                                        <rect key="frame" x="4" y="-31" width="310" height="502"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Signika-Light_SemiBold" family="Signika" pointSize="15"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Filter Off">
-                                            <imageReference key="image" image="line.horizontal.3.decrease.circle.fill" catalog="system" symbolScale="small"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="PyN-1M-6Ep" kind="presentation" modalTransitionStyle="coverVertical" id="jku-CH-Ji6"/>
-                                        </connections>
-                                    </button>
+                                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" rowHeight="154" id="h0J-eq-tMB">
+                                                <rect key="frame" x="0.0" y="55.333332061767578" width="310" height="154"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0J-eq-tMB" id="3f2-Cp-Bbl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="154"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" selected="YES" startsMediaSession="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="Hrx-Ra-UPy"/>
+                                    <constraint firstAttribute="height" constant="476" id="ob8-pf-LWd"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Header_Red_S-size2" translatesAutoresizingMaskIntoConstraints="NO" id="ULw-2E-2hB">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="206"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55b-qG-K7O">
+                                <rect key="frame" x="118" y="714" width="236" height="66"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="Dw0-hh-RTc"/>
+                                    <constraint firstAttribute="height" constant="66" id="XnN-la-4Vi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="24"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Randomize">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="arrow.triangle.2.circlepath" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="randomize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HTy-tD-2rs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLS-Z0-JwN">
+                                <rect key="frame" x="252" y="176" width="102" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="8ZS-5y-A3C"/>
+                                    <constraint firstAttribute="width" constant="102" id="hGQ-DK-GD5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_SemiBold" family="Signika" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="-4" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Filter Off">
+                                    <imageReference key="image" image="line.horizontal.3.decrease.circle.fill" catalog="system" symbolScale="small"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PyN-1M-6Ep" kind="presentation" modalTransitionStyle="coverVertical" id="jku-CH-Ji6"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_unset" translatesAutoresizingMaskIntoConstraints="NO" id="ULw-2E-2hB">
+                                <rect key="frame" x="-488" y="-761" width="1366" height="930"/>
                             </imageView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="5rA-gv-vkc">
+                                <rect key="frame" x="36" y="714" width="68" height="66"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="WAX-Q1-kko"/>
+                                    <constraint firstAttribute="width" constant="68" id="pj5-fm-K8I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setIdea:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4YM-oT-cSu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Idea" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDE-jm-Nyb">
+                                <rect key="frame" x="49" y="727" width="42" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="2SX-Mz-Qcx"/>
+                                    <constraint firstAttribute="height" constant="40" id="KYn-v5-VxO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.94509803921568625" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mDE-jm-Nyb" firstAttribute="centerX" secondItem="5rA-gv-vkc" secondAttribute="centerX" id="2uN-nW-PVc"/>
+                            <constraint firstItem="mDE-jm-Nyb" firstAttribute="centerY" secondItem="5rA-gv-vkc" secondAttribute="centerY" id="8s6-na-llK"/>
+                            <constraint firstItem="VLS-Z0-JwN" firstAttribute="trailing" secondItem="X5a-LB-JUc" secondAttribute="trailing" id="DP5-6K-X6Y"/>
+                            <constraint firstItem="55b-qG-K7O" firstAttribute="centerY" secondItem="5rA-gv-vkc" secondAttribute="centerY" id="F8z-5h-iXm"/>
+                            <constraint firstItem="5rA-gv-vkc" firstAttribute="leading" secondItem="X5a-LB-JUc" secondAttribute="leading" id="OSP-Zu-LXV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="55b-qG-K7O" secondAttribute="bottom" constant="30" id="QnB-Ck-qYv"/>
+                            <constraint firstItem="X5a-LB-JUc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QsY-YB-QuC"/>
+                            <constraint firstItem="X5a-LB-JUc" firstAttribute="top" secondItem="VLS-Z0-JwN" secondAttribute="bottom" constant="10" id="iXw-Ik-nhN"/>
+                            <constraint firstItem="ULw-2E-2hB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mAj-aM-UfS"/>
+                            <constraint firstItem="ULw-2E-2hB" firstAttribute="bottom" secondItem="X5a-LB-JUc" secondAttribute="bottom" constant="-525" id="oxc-kS-Zux"/>
+                            <constraint firstItem="X5a-LB-JUc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="34" id="rtH-Af-ePT"/>
+                            <constraint firstItem="55b-qG-K7O" firstAttribute="trailing" secondItem="X5a-LB-JUc" secondAttribute="trailing" id="uxD-X9-Dwp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b5Y-ur-S2l"/>
                     <connections>
@@ -145,9 +158,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-bd-tge">
-                                <rect key="frame" x="0.0" y="8" width="390" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JdD-bd-tge">
+                                <rect key="frame" x="0.0" y="8" width="390" height="56"/>
                                 <color key="backgroundColor" red="0.99372833969999996" green="0.94304013249999996" blue="0.90900766850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -166,9 +178,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-Jc-MkG">
-                                <rect key="frame" x="36" y="91" width="318" height="453"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zg-Jc-MkG">
+                                <rect key="frame" x="36" y="104" width="318" height="453"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="146" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="9It-qx-mI4">
                                         <rect key="frame" x="4" y="-31" width="310" height="476"/>
@@ -176,7 +187,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" id="Fuy-9n-1Mw">
-                                                <rect key="frame" x="0.0" y="49" width="310" height="146"/>
+                                                <rect key="frame" x="0.0" y="55.333332061767578" width="310" height="146"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fuy-9n-1Mw" id="dbQ-nK-zpt">
                                                     <rect key="frame" x="0.0" y="0.0" width="310" height="146"/>
@@ -187,11 +198,18 @@
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="Um4-qO-wz4"/>
+                                    <constraint firstAttribute="height" constant="453" id="ejy-1a-siw"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-Bc-TCy">
-                                <rect key="frame" x="116" y="659" width="236" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.9758130908" green="0.035168237980000003" blue="0.081538580360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-Bc-TCy">
+                                <rect key="frame" x="118" y="660" width="236" height="66"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="236" id="4KL-zO-q9K"/>
+                                    <constraint firstAttribute="height" constant="66" id="nLP-nU-djS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -205,10 +223,13 @@
                                     <segue destination="rBs-dF-0rZ" kind="unwind" identifier="filterDataSegue" unwindAction="unwindToViewController:" id="CIq-F9-XKG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="f98-ea-2Mj">
-                                <rect key="frame" x="36" y="659" width="68" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="f98-ea-2Mj">
+                                <rect key="frame" x="36" y="660" width="68" height="66"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="pb4-aQ-iAC"/>
+                                    <constraint firstAttribute="height" constant="66" id="zRC-9O-tLG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
                                 <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
                                 <state key="normal">
@@ -218,9 +239,12 @@
                                     <action selector="clearAll:" destination="PyN-1M-6Ep" eventType="touchUpInside" id="YhH-j2-DCQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clear All" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nM-9n-lBd">
-                                <rect key="frame" x="49" y="672" width="42" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear All" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nM-9n-lBd">
+                                <rect key="frame" x="49" y="673" width="42" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="iNP-mf-hJ0"/>
+                                    <constraint firstAttribute="width" constant="42" id="rzz-Vr-Kez"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -228,6 +252,19 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="usq-hc-qeY"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GYF-Bc-TCy" firstAttribute="trailing" secondItem="4Zg-Jc-MkG" secondAttribute="trailing" id="9ln-tj-Whn"/>
+                            <constraint firstItem="5nM-9n-lBd" firstAttribute="centerX" secondItem="f98-ea-2Mj" secondAttribute="centerX" id="T0I-ko-975"/>
+                            <constraint firstItem="JdD-bd-tge" firstAttribute="trailing" secondItem="usq-hc-qeY" secondAttribute="trailing" id="TeL-Tz-9QO"/>
+                            <constraint firstItem="4Zg-Jc-MkG" firstAttribute="centerX" secondItem="zGW-xz-Mxg" secondAttribute="centerX" id="Ums-BZ-5lf"/>
+                            <constraint firstItem="5nM-9n-lBd" firstAttribute="centerY" secondItem="f98-ea-2Mj" secondAttribute="centerY" id="Wr7-8Y-nNW"/>
+                            <constraint firstItem="GYF-Bc-TCy" firstAttribute="centerY" secondItem="f98-ea-2Mj" secondAttribute="centerY" id="Zbg-tm-EI1"/>
+                            <constraint firstItem="f98-ea-2Mj" firstAttribute="leading" secondItem="4Zg-Jc-MkG" secondAttribute="leading" id="ahE-dA-FOw"/>
+                            <constraint firstItem="JdD-bd-tge" firstAttribute="leading" secondItem="usq-hc-qeY" secondAttribute="leading" id="am2-dp-MNM"/>
+                            <constraint firstItem="JdD-bd-tge" firstAttribute="top" secondItem="usq-hc-qeY" secondAttribute="top" constant="8" id="nVJ-K9-y0c"/>
+                            <constraint firstItem="usq-hc-qeY" firstAttribute="bottom" secondItem="GYF-Bc-TCy" secondAttribute="bottom" constant="30" id="vRI-bW-oag"/>
+                            <constraint firstItem="4Zg-Jc-MkG" firstAttribute="top" secondItem="JdD-bd-tge" secondAttribute="bottom" constant="40" id="vTX-U3-wTu"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6vV-jb-u29"/>
@@ -252,18 +289,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Glass Bottom" translatesAutoresizingMaskIntoConstraints="NO" id="K87-cr-Rbg">
-                                <rect key="frame" x="0.0" y="675" width="390" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYr-kI-QZv">
+                                <rect key="frame" x="36" y="218" width="318" height="476"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="W6f-Iq-CeC"/>
+                                    <constraint firstAttribute="height" constant="476" id="YUs-7l-YJM"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randomButton_left" translatesAutoresizingMaskIntoConstraints="NO" id="I2h-lE-Tmd">
+                                <rect key="frame" x="34" y="714" width="161" height="73"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dumHeader_Red_XL" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-aQ-5I9">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="690"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="randomButton_right" translatesAutoresizingMaskIntoConstraints="NO" id="Dxp-Lq-Pbj">
+                                <rect key="frame" x="195" y="714" width="161" height="73"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhm-RP-UWp">
-                                <rect key="frame" x="36" y="713" width="318" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.9758130908" green="0.035168237980000003" blue="0.081538580360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_unset" translatesAutoresizingMaskIntoConstraints="NO" id="K3a-aQ-5I9">
+                                <rect key="frame" x="-488" y="-236" width="1366" height="930"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhm-RP-UWp">
+                                <rect key="frame" x="36" y="714" width="318" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="NGQ-4T-mSQ"/>
+                                    <constraint firstAttribute="width" constant="318" id="fch-fx-LYF"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -273,15 +320,31 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="bold"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="showDetail" animates="NO" id="FTm-eu-qDg"/>
+                                    <action selector="moveScreensAnimation:" destination="xvD-8C-AsH" eventType="touchUpInside" id="VFm-mE-BfW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Pdh-dH-If5"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nYr-kI-QZv" firstAttribute="centerX" secondItem="4Xu-T5-N5C" secondAttribute="centerX" id="0aN-2z-ccs"/>
+                            <constraint firstItem="I2h-lE-Tmd" firstAttribute="leading" secondItem="nYr-kI-QZv" secondAttribute="leading" constant="-2" id="6OR-zf-phd"/>
+                            <constraint firstItem="Dxp-Lq-Pbj" firstAttribute="trailing" secondItem="nYr-kI-QZv" secondAttribute="trailing" constant="2" id="9jp-El-kpG"/>
+                            <constraint firstItem="fhm-RP-UWp" firstAttribute="top" secondItem="Dxp-Lq-Pbj" secondAttribute="top" id="Eiu-LO-7cw"/>
+                            <constraint firstItem="K3a-aQ-5I9" firstAttribute="bottom" secondItem="nYr-kI-QZv" secondAttribute="bottom" id="NUC-4t-Tqc"/>
+                            <constraint firstItem="fhm-RP-UWp" firstAttribute="top" secondItem="I2h-lE-Tmd" secondAttribute="top" id="Wyo-1n-gy8"/>
+                            <constraint firstItem="Pdh-dH-If5" firstAttribute="bottom" secondItem="fhm-RP-UWp" secondAttribute="bottom" constant="30" id="fWQ-Dw-h6l"/>
+                            <constraint firstItem="fhm-RP-UWp" firstAttribute="centerX" secondItem="4Xu-T5-N5C" secondAttribute="centerX" id="lin-a3-q2E"/>
+                            <constraint firstItem="nYr-kI-QZv" firstAttribute="centerY" secondItem="4Xu-T5-N5C" secondAttribute="centerY" constant="34" id="ndH-im-hsX"/>
+                            <constraint firstItem="fhm-RP-UWp" firstAttribute="centerX" secondItem="4Xu-T5-N5C" secondAttribute="centerX" id="nxx-dP-rHT"/>
+                            <constraint firstItem="K3a-aQ-5I9" firstAttribute="centerX" secondItem="4Xu-T5-N5C" secondAttribute="centerX" id="sOF-BG-bgS"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnImageLeft" destination="I2h-lE-Tmd" id="WTb-1P-cWM"/>
                         <outlet property="firstRandomizeButton" destination="fhm-RP-UWp" id="xzd-dm-hxJ"/>
+                        <outlet property="header" destination="K3a-aQ-5I9" id="Uvc-rj-JmV"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="firstSegue" animates="NO" modalPresentationStyle="fullScreen" id="qcF-7E-ssX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qj-id-7H4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -290,13 +353,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Glass Bottom" width="375" height="198"/>
-        <image name="Header_Red_S-size2" width="375" height="196"/>
-        <image name="Long Dash" width="290" height="5"/>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="dumHeader_Red_XL" width="375" height="685"/>
+        <image name="header_unset" width="1366" height="930"/>
         <image name="line.horizontal.3.decrease.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="randomButton_left" width="161" height="73"/>
+        <image name="randomButton_right" width="161" height="73"/>
     </resources>
 </document>
