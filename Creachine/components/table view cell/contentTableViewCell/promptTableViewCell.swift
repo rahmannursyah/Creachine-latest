@@ -28,7 +28,7 @@ class promptTableViewCell: UITableViewCell {
 	var animatedImages: UIImage!
 	
 	//logic untuk animasi blink
-	public func animateImages(){
+	public func animateBlinkLight(){
 		loading_1 = UIImage(named: "blink-1")
 		loading_2 = UIImage(named: "blink-2")
 		loading_3 = UIImage(named: "blink-3")

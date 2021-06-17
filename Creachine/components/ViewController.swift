@@ -9,27 +9,27 @@ import UIKit
 import AVFoundation
 
 // MARK: - Variables
-    private var pics: [UIImage] = [
-        UIImage(named: "pic1")!,
-        UIImage(named: "pic2")!,
-        UIImage(named: "pic3")!,
-        UIImage(named: "pic4")!,
-        UIImage(named: "pic5")!,
-        UIImage(named: "pic6")!,
-        UIImage(named: "pic7")!,
-        UIImage(named: "pic8")!,
-        UIImage(named: "pic9")!,
-        UIImage(named: "pic10")! ]
-    private var labels: [String] = ["Index 0",
-                                    "index 1",
-                                    "index 2",
-                                    "index 3",
-                                    "index 4",
-                                    "index 5",
-                                    "index 6",
-                                    "index 7",
-                                    "index 8",
-                                    "index 9"]
+//    private var pics: [UIImage] = [
+//        UIImage(named: "pic1")!,
+//        UIImage(named: "pic2")!,
+//        UIImage(named: "pic3")!,
+//        UIImage(named: "pic4")!,
+//        UIImage(named: "pic5")!,
+//        UIImage(named: "pic6")!,
+//        UIImage(named: "pic7")!,
+//        UIImage(named: "pic8")!,
+//        UIImage(named: "pic9")!,
+//        UIImage(named: "pic10")! ]
+//    private var labels: [String] = ["Index 0",
+//                                    "index 1",
+//                                    "index 2",
+//                                    "index 3",
+//                                    "index 4",
+//                                    "index 5",
+//                                    "index 6",
+//                                    "index 7",
+//                                    "index 8",
+//                                    "index 9"]
     
     private var numbers: [Int] = [0,1,2]
 
@@ -74,15 +74,11 @@ class ViewController: UIViewController, UITableViewDataSource{
                 try AVAudioSession.sharedInstance().setMode(.default)
                 try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
 
-                guard let urlString = urlString else{
-                    return
-                }
+                guard let urlString = urlString else{ return }
 
                 player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
 
-                guard let player = player else{
-                    return
-                }
+                guard let player = player else{ return }
 
                 player.play()
             }
@@ -160,15 +156,11 @@ class ViewController: UIViewController, UITableViewDataSource{
             try AVAudioSession.sharedInstance().setMode(.default)
             try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
 
-            guard let urlString = urlString else{
-                return
-            }
+            guard let urlString = urlString else{ return  }
 
             player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
 
-            guard let player = player else{
-                return
-            }
+            guard let player = player else{ return  }
 
             player.play()
         }
@@ -275,37 +267,27 @@ class ViewController: UIViewController, UITableViewDataSource{
             if index == 0 {
                 if indexPath.section == 0 {
                     if cell.isActive == false { // button: unlock
-                        cell.animation_0()
+                        cell.animateBlinkLight()
+                        spin123_0(cell: cell)
                         sequenceAnimation_0(cell: cell)
-                        //print("animation 0")
                     }
                 }
                 else if indexPath.section == 1 {
                     if cell.isActive == false {
-                        cell.animation_1()
+                        cell.animateBlinkLight()
+                        spin123_1(cell: cell)
                         sequenceAnimation_1(cell: cell)
-                        //print("animation 1")
                     }
                 }
                 else if indexPath.section == 2 {
                     if cell.isActive == false {
-                        cell.animation_2()
+                        cell.animateBlinkLight()
+                        spin123_2(cell: cell)
                         sequenceAnimation_2(cell: cell)
-                        //print("animation 2")
                     }
                 }
             }
         }
-        
-//		for  value in 0...2{
-//
-//			 if indexPath.section == value{
-//				 if isClicked == true  {
-//					 cell.animateImages()
-//				 }
-//			 }
-//
-//		 }
 
 		return cell
 }
@@ -362,6 +344,99 @@ class ViewController: UIViewController, UITableViewDataSource{
     }
 	
 }
+//MARK: -TestLetImage
+    //CONTENT
+    let content0 = UIImage(named: "2Content10ms-0")!
+    let content1 = UIImage(named: "2Content10ms-1")!
+    let content2 = UIImage(named: "2Content10ms-2")!
+    let content3 = UIImage(named: "2Content10ms-3")!
+    let content4 = UIImage(named: "2Content10ms-4")!
+    let content5 = UIImage(named: "2Content10ms-5")!
+    let content6 = UIImage(named: "2Content10ms-6")!
+    let content7 = UIImage(named: "2Content10ms-7")!
+    let content8 = UIImage(named: "2Content10ms-8")!
+    let content9 = UIImage(named: "2Content10ms-9")!
+
+    func spin123_0(cell: promptTableViewCell){
+        cell.contentSpinAnimationView.animationImages = [content0, content1, content2, content3, content4, content5, content6, content7, content8, content9]
+        cell.contentSpinAnimationView.animationDuration = 0.80
+        cell.contentSpinAnimationView.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.70){
+            cell.contentSpinAnimationView.stopAnimating()
+        }
+    }
+    
+    //COLOR
+    let color0 = UIImage(named: "2Color20ms-0")!
+    let color1 = UIImage(named: "2Color20ms-1")!
+    let color2 = UIImage(named: "2Color20ms-2")!
+    let color3 = UIImage(named: "2Color20ms-3")!
+    let color4 = UIImage(named: "2Color20ms-4")!
+    let color5 = UIImage(named: "2Color20ms-5")!
+    let color6 = UIImage(named: "2Color20ms-6")!
+    let color7 = UIImage(named: "2Color20ms-7")!
+    let color8 = UIImage(named: "2Color20ms-8")!
+    let color9 = UIImage(named: "2Color20ms-9")!
+    let color10 = UIImage(named: "2Color20ms-10")!
+    let color11 = UIImage(named: "2Color20ms-11")!
+    let color12 = UIImage(named: "2Color20ms-12")!
+    let color13 = UIImage(named: "2Color20ms-13")!
+    let color14 = UIImage(named: "2Color20ms-14")!
+    let color15 = UIImage(named: "2Color20ms-15")!
+    let color16 = UIImage(named: "2Color20ms-16")!
+    let color17 = UIImage(named: "2Color20ms-17")!
+    let color18 = UIImage(named: "2Color20ms-18")!
+    let color19 = UIImage(named: "2Color20ms-19")!
+
+    func spin123_1(cell: promptTableViewCell){
+        cell.contentSpinAnimationView.animationImages = [color0, color1, color2, color3, color4, color5, color6, color7, color8, color9, color10, color11, color12, color13, color14, color15, color16, color17, color18, color19]
+        cell.contentSpinAnimationView.animationDuration = 0.90
+        cell.contentSpinAnimationView.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.80){
+            cell.contentSpinAnimationView.stopAnimating()
+        }
+    }
+    
+    //STYLE
+    let style0 = UIImage(named: "2Style30ms-0")!
+    let style1 = UIImage(named: "2Style30ms-1")!
+    let style2 = UIImage(named: "2Style30ms-2")!
+    let style3 = UIImage(named: "2Style30ms-3")!
+    let style4 = UIImage(named: "2Style30ms-4")!
+    let style5 = UIImage(named: "2Style30ms-5")!
+    let style6 = UIImage(named: "2Style30ms-6")!
+    let style7 = UIImage(named: "2Style30ms-7")!
+    let style8 = UIImage(named: "2Style30ms-8")!
+    let style9 = UIImage(named: "2Style30ms-9")!
+    let style10 = UIImage(named: "2Style30ms-10")!
+    let style11 = UIImage(named: "2Style30ms-11")!
+    let style12 = UIImage(named: "2Style30ms-12")!
+    let style13 = UIImage(named: "2Style30ms-13")!
+    let style14 = UIImage(named: "2Style30ms-14")!
+    let style15 = UIImage(named: "2Style30ms-15")!
+    let style16 = UIImage(named: "2Style30ms-16")!
+    let style17 = UIImage(named: "2Style30ms-17")!
+    let style18 = UIImage(named: "2Style30ms-18")!
+    let style19 = UIImage(named: "2Style30ms-19")!
+    let style20 = UIImage(named: "2Style30ms-20")!
+    let style21 = UIImage(named: "2Style30ms-21")!
+    let style22 = UIImage(named: "2Style30ms-22")!
+    let style23 = UIImage(named: "2Style30ms-23")!
+    let style24 = UIImage(named: "2Style30ms-24")!
+    let style25 = UIImage(named: "2Style30ms-25")!
+    let style26 = UIImage(named: "2Style30ms-26")!
+    let style27 = UIImage(named: "2Style30ms-27")!
+    let style28 = UIImage(named: "2Style30ms-28")!
+    let style29 = UIImage(named: "2Style30ms-29")!
+
+    func spin123_2(cell: promptTableViewCell){
+        cell.contentSpinAnimationView.animationImages = [style0, style1, style2, style3, style4, style5, style6, style7, style8, style9, style10, style11, style12, style13, style14, style15, style16, style17, style18, style19, style20, style21, style22, style23, style24, style25, style26, style27, style28, style29]
+        cell.contentSpinAnimationView.animationDuration = 1.0
+        cell.contentSpinAnimationView.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.90){
+            cell.contentSpinAnimationView.stopAnimating()
+        }
+    }
 
     //MARK: - sequence animation
     func sequenceAnimation_0(cell: promptTableViewCell) {
@@ -374,8 +449,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 
                 cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
                 cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-            })
-            , completion: { _ in
+            }) , completion: { _ in
                 UIView.animate(
                     withDuration: 0.5,
                     delay: 0.50,
@@ -421,8 +495,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 
                     cell.detailImageView.frame = CGRect(x: 20, y: -150, width: 56, height: 56)
                     cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: -100)
-                })
-                , completion: { _ in
+                }) , completion: { _ in
                     UIView.animate(
                         withDuration: 0.5,
                         delay: 0.70,
@@ -432,7 +505,6 @@ class ViewController: UIViewController, UITableViewDataSource{
                                 cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
                         })
                 })
-
     }
 
 
@@ -453,4 +525,5 @@ extension ViewController {
 		print(selectedColor)
 		print(selectedStyle)
 	}
+    
 }
