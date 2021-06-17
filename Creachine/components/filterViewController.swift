@@ -123,15 +123,19 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 			if !contentCategoryContainer.isEmpty {
 				if contentCategoryContainer.contains(cell.firstFilterLabel.text ?? "Error") {
 					cell.firstCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isActive = true
 				}
 				if contentCategoryContainer.contains(cell.secondFilterLabel.text ?? "Error") {
 					cell.secondCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isSecondActive = true
 				}
 				if contentCategoryContainer.contains(cell.thirdFilterLabel.text ?? "Error") {
 					cell.thirdCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isThirdActive = true
 				}
 				if contentCategoryContainer.contains(cell.fourthFilterLabel.text ?? "Error") {
 					cell.fourthCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isFourthActive = true
 				}
 			}
 		} else if indexPath.section == 1{
@@ -143,15 +147,19 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 			if !colorCategoryContainer.isEmpty {
 				if colorCategoryContainer.contains(cell.firstFilterLabel.text ?? "Error") {
 					cell.firstCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isActive = true
 				}
 				if colorCategoryContainer.contains(cell.secondFilterLabel.text ?? "Error") {
 					cell.secondCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isSecondActive = true
 				}
 				if colorCategoryContainer.contains(cell.thirdFilterLabel.text ?? "Error") {
 					cell.thirdCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isThirdActive = true
 				}
 				if colorCategoryContainer.contains(cell.fourthFilterLabel.text ?? "Error") {
 					cell.fourthCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isFourthActive = true
 				}
 			}
 		} else {
@@ -163,15 +171,19 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 			if !styleCategoryContainer.isEmpty {
 				if styleCategoryContainer.contains(cell.firstFilterLabel.text ?? "Error") {
 					cell.firstCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isActive = true
 				}
 				if styleCategoryContainer.contains(cell.secondFilterLabel.text ?? "Error") {
 					cell.secondCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isSecondActive = true
 				}
 				if styleCategoryContainer.contains(cell.thirdFilterLabel.text ?? "Error") {
 					cell.thirdCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isThirdActive = true
 				}
 				if styleCategoryContainer.contains(cell.fourthFilterLabel.text ?? "Error") {
 					cell.fourthCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
+                    cell.isFourthActive = true
 				}
 			}
 		}
@@ -299,6 +311,7 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 			destVC?.selectedContent = contentCategoryContainer
 			destVC?.selectedColor = colorCategoryContainer
 			destVC?.selectedStyle = styleCategoryContainer
+            destVC?.checkIfFiltered()
 			print("ini keluar dari filter view controller")
 		} else {
 			print("identifier not found")
