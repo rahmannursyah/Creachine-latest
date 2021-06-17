@@ -41,14 +41,15 @@ class filterTableViewCell: UITableViewCell {
 	
 	@IBAction func checkedButton(_ sender: Any) {
 		if isActive {
-			print(isActive)
+			//print(isActive)
 			self.delegate?.removeData(myData: firstFilterLabel.text!)
 			isActive = false
-			print(isActive)
+			//print(isActive)
 			firstCheckButton.setImage(#imageLiteral(resourceName: "Unchecked"), for: .normal)
 		}
 		else {
 			self.delegate?.sendDataToViewController(myData: firstFilterLabel.text!)
+            //print(isActive)
 			isActive = true
 			firstCheckButton.setImage(#imageLiteral(resourceName: "Checked"), for: .normal)
 		}

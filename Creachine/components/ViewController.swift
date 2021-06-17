@@ -121,15 +121,15 @@ class ViewController: UIViewController, UITableViewDataSource{
 	var colorContainer: [Color] = []
 	
 	var isClicked = false
-	
+    var count: Int = 0
 	@IBAction func randomize(_ sender: UIButton) {
         generateRandomNumber()
 		isClicked = true
-		
 		filterContentData()
 		filterColorData()
 		filterStyleData()
-		
+		count = 0
+        
         for index in 0...2 {
 			if index == 0 {
 				//masukin buat content container
@@ -173,7 +173,7 @@ class ViewController: UIViewController, UITableViewDataSource{
         for index in 0...2 {
             numbers[index] = Int.random(in: 0..<10)
         }
-        print (numbers)
+        //print (numbers)
         isTapped = true
         promptTableView.reloadData()
     }
@@ -185,7 +185,6 @@ class ViewController: UIViewController, UITableViewDataSource{
 	override func viewDidLoad() {
 		super.viewDidLoad()
         generateRandomNumber()
-        
 		contentContainer = contentData
 		colorContainer = colorData
 		styleContainer = styleData
@@ -197,7 +196,8 @@ class ViewController: UIViewController, UITableViewDataSource{
         filterButton.layer.shadowOffset = CGSize(width: 0, height: 5)
         filterButton.layer.shadowOpacity = 0.3
         filterButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-		
+        filterButton.layer.borderWidth = 4
+        
 		setIdeaButton.layer.cornerRadius = 18
 		setIdeaButton.layer.shadowRadius = 3
 		setIdeaButton.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -219,7 +219,35 @@ class ViewController: UIViewController, UITableViewDataSource{
 		let contentNib = UINib(nibName: "\(promptTableViewCell.self)", bundle: nil)
 		self.promptTableView.register(contentNib, forCellReuseIdentifier: "contentCell")
 	}
-	
+    
+    
+    func checkIfFiltered(){
+        if selectedStyle.count != 0 {
+            count += 1
+        }
+        if selectedColor.count != 0{
+            count += 1
+        }
+        if selectedContent.count != 0{
+            count += 1
+        }
+        
+        if count == 0 {
+            filterButton.setTitle("Filter Off", for: .normal)
+            filterButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            filterButton.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+            filterButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        }else{
+            filterButton.setTitle("Filter On", for: .normal)
+            filterButton.backgroundColor = #colorLiteral(red: 0.5401698947, green: 0.8065562248, blue: 0.7741576433, alpha: 1)
+            filterButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            filterButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            filterButton.layer.borderWidth = 4
+            
+        }
+        
+//        count = 0
+    }
     //MARK: -SETUP TABLEVIEW
 	func numberOfSections(in tableView: UITableView) -> Int { return 3 }
 	
@@ -239,6 +267,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 		
         cell.contentSpinAnimationView.isHidden = false
         
+//        checkIfFiltered()
         //MARK: CUSTOMIZE CELL: HEADER TEXT
 		if indexPath.section == 0 {
 			cell.contentHeaderLabel.text = "Content"
@@ -300,7 +329,8 @@ class ViewController: UIViewController, UITableViewDataSource{
 			styleData = styleData.filter { style in
 				if selectedStyle.contains(style.styleCategory!){
 					styleContainer.append(style)
-					print(style.styleDescription!)}
+					//print(style.styleDescription!)
+                }
 				return true
 				}
 			}
@@ -505,12 +535,15 @@ class ViewController: UIViewController, UITableViewDataSource{
                                 cell.contentRandomLabel.transform = CGAffineTransform(translationX: 0, y: 0)
                         })
                 })
+        
+     
     }
 
 
 
 extension ViewController {
 	@IBAction func unwindToViewController(_ segue: UIStoryboardSegue) {
+        count = 0
 	}
 }
 
@@ -521,9 +554,9 @@ extension ViewController {
 		filterVC?.contentCategoryContainer = selectedContent
 		filterVC?.colorCategoryContainer = selectedColor
 //		print("masuk nih preparenya")
-		print(selectedContent)
-		print(selectedColor)
-		print(selectedStyle)
+//		print(selectedContent)
+//		print(selectedColor)
+//		print(selectedStyle)
 	}
     
 }
