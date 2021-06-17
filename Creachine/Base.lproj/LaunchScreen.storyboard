@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,14 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Glass Bottom" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-th-sTf">
-                                <rect key="frame" x="0.0" y="675" width="390" height="169"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vp-Uk-RHA">
-                                <rect key="frame" x="36" y="711" width="318" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMt-Zz-RDH">
+                                <rect key="frame" x="36" y="218" width="318" height="476"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="Lxx-at-f3o"/>
+                                    <constraint firstAttribute="height" constant="476" id="TQU-fA-65X"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vp-Uk-RHA">
+                                <rect key="frame" x="36" y="714" width="318" height="66"/>
                                 <color key="backgroundColor" red="0.9758130908" green="0.035168237980000003" blue="0.081538580360000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="59L-40-Re1"/>
+                                    <constraint firstAttribute="height" constant="66" id="C3w-1C-SvL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="24"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="-16" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -38,13 +44,20 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="large" weight="bold"/>
                                 </state>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dumHeader_Red_XL" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-1J-LOf">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="690"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_unset" translatesAutoresizingMaskIntoConstraints="NO" id="WaH-1J-LOf">
+                                <rect key="frame" x="-488" y="-236" width="1366" height="930"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="GMt-Zz-RDH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="34" id="6Tw-a7-0Wn"/>
+                            <constraint firstItem="WaH-1J-LOf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QUS-R1-3PT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1vp-Uk-RHA" secondAttribute="bottom" constant="30" id="Qak-HK-SiL"/>
+                            <constraint firstItem="WaH-1J-LOf" firstAttribute="bottom" secondItem="GMt-Zz-RDH" secondAttribute="bottom" id="ead-UY-N8y"/>
+                            <constraint firstItem="GMt-Zz-RDH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="taE-wY-ZLL"/>
+                            <constraint firstItem="1vp-Uk-RHA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zPH-CN-X0O"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -53,8 +66,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Glass Bottom" width="375" height="198"/>
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
-        <image name="dumHeader_Red_XL" width="375" height="685"/>
+        <image name="header_unset" width="1366" height="930"/>
     </resources>
 </document>
