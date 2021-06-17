@@ -51,9 +51,9 @@
                                     <constraint firstAttribute="height" constant="476" id="ob8-pf-LWd"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55b-qG-K7O">
+                            <button opaque="NO" alpha="0.92000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55b-qG-K7O">
                                 <rect key="frame" x="118" y="714" width="236" height="66"/>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.1803921568627451" blue="0.17254901960784313" alpha="0.92000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="236" id="Dw0-hh-RTc"/>
                                     <constraint firstAttribute="height" constant="66" id="XnN-la-4Vi"/>
@@ -203,9 +203,9 @@
                                     <constraint firstAttribute="height" constant="453" id="ejy-1a-siw"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-Bc-TCy">
+                            <button opaque="NO" alpha="0.92000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYF-Bc-TCy">
                                 <rect key="frame" x="118" y="660" width="236" height="66"/>
-                                <color key="backgroundColor" red="0.89803921568627454" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.83921568627450982" green="0.1803921568627451" blue="0.15686274509803921" alpha="0.92000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="236" id="4KL-zO-q9K"/>
                                     <constraint firstAttribute="height" constant="66" id="nLP-nU-djS"/>
