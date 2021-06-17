@@ -9,27 +9,6 @@ import UIKit
 import AVFoundation
 
 // MARK: - Variables
-//    private var pics: [UIImage] = [
-//        UIImage(named: "pic1")!,
-//        UIImage(named: "pic2")!,
-//        UIImage(named: "pic3")!,
-//        UIImage(named: "pic4")!,
-//        UIImage(named: "pic5")!,
-//        UIImage(named: "pic6")!,
-//        UIImage(named: "pic7")!,
-//        UIImage(named: "pic8")!,
-//        UIImage(named: "pic9")!,
-//        UIImage(named: "pic10")! ]
-//    private var labels: [String] = ["Index 0",
-//                                    "index 1",
-//                                    "index 2",
-//                                    "index 3",
-//                                    "index 4",
-//                                    "index 5",
-//                                    "index 6",
-//                                    "index 7",
-//                                    "index 8",
-//                                    "index 9"]
     
     private var numbers: [Int] = [0,1,2]
 
@@ -125,9 +104,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 	@IBAction func randomize(_ sender: UIButton) {
         generateRandomNumber()
 		isClicked = true
-		filterContentData()
-		filterColorData()
-		filterStyleData()
+		
 		count = 0
         
         for index in 0...2 {
@@ -185,9 +162,9 @@ class ViewController: UIViewController, UITableViewDataSource{
 	override func viewDidLoad() {
 		super.viewDidLoad()
         generateRandomNumber()
-		contentContainer = contentData
-		colorContainer = colorData
-		styleContainer = styleData
+		filterContentData()
+		filterColorData()
+		filterStyleData()
 //		print(contentContainer[0].contentDescription)
 		
         //MARK: - CUSTOMIZE BUTTON
@@ -291,7 +268,9 @@ class ViewController: UIViewController, UITableViewDataSource{
 			cell.contentRandomLabel.text = styleContainer[numbers[2]].styleDescription
             }
 		}
-        
+		
+//		removeAllStoredData()
+		
         for index in 0...2{
             if index == 0 {
                 if indexPath.section == 0 {
@@ -317,7 +296,7 @@ class ViewController: UIViewController, UITableViewDataSource{
                 }
             }
         }
-
+		
 		return cell
 }
 
@@ -326,7 +305,8 @@ class ViewController: UIViewController, UITableViewDataSource{
 			if selectedStyle.count == 4 || selectedStyle.isEmpty {
 				styleContainer = styleData
 			}else{
-			styleData = styleData.filter { style in
+				styleContainer.removeAll()
+				styleData = styleData.filter { style in
 				if selectedStyle.contains(style.styleCategory!){
 					styleContainer.append(style)
 					//print(style.styleDescription!)
@@ -340,6 +320,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 			if selectedContent.count == 4 || selectedContent.isEmpty{
 				contentContainer = contentData
 			}else{
+				contentContainer.removeAll()
 				contentData = contentData.filter{ content in
 					if selectedContent.contains(content.contentCategory!){
 						contentContainer.append(content)
@@ -353,19 +334,14 @@ class ViewController: UIViewController, UITableViewDataSource{
 			if selectedColor.count == 4 || selectedColor.isEmpty{
 				colorContainer = colorData
 			}else{
-				colorData = colorContainer.filter{ color in
+				colorContainer.removeAll()
+				colorData = colorData.filter{ color in
 					if selectedColor.contains(color.colorCategory!){
 						colorContainer.append(color)
 					}
 					return true
 				}
 			}
-		}
-		
-		func removeAllStoredData(){
-			colorContainer.removeAll()
-			contentContainer.removeAll()
-			styleContainer.removeAll()
 		}
 	
     //MARK: -STATUS BAR HIDDEN
@@ -544,6 +520,9 @@ class ViewController: UIViewController, UITableViewDataSource{
 extension ViewController {
 	@IBAction func unwindToViewController(_ segue: UIStoryboardSegue) {
         count = 0
+		filterContentData()
+		filterColorData()
+		filterStyleData()
 	}
 }
 
