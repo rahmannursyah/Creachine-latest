@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class firstPageViewController: UIViewController {
 
@@ -30,7 +31,7 @@ class firstPageViewController: UIViewController {
 		}
     
     @IBAction func moveScreensAnimation(_ sender: Any) {
-        
+		
         UIView.animate(withDuration: 0.8, animations: {
             self.btnImageLeft.transform = CGAffineTransform(translationX: +82, y: 0)
             self.firstRandomizeButton.transform = CGAffineTransform(translationX: +45, y: 0)
