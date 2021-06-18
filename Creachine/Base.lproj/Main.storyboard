@@ -144,6 +144,7 @@
                         <outlet property="randomizeButton" destination="55b-qG-K7O" id="Gkt-V0-K04"/>
                         <outlet property="setIdeaButton" destination="5rA-gv-vkc" id="Sfq-uz-jnx"/>
                         <outlet property="setIdeaLabel" destination="mDE-jm-Nyb" id="heq-sf-IOS"/>
+                        <segue destination="AMD-6i-NMq" kind="presentation" identifier="keInstruction" id="a7b-80-BO9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -281,6 +282,120 @@
             </objects>
             <point key="canvasLocation" x="947.69230769230762" y="113.74407582938387"/>
         </scene>
+        <!--instruction modal-->
+        <scene sceneID="IsF-de-qV9">
+            <objects>
+                <viewController id="AMD-6i-NMq" userLabel="instruction modal" customClass="ins_ViewController" customModule="Creachine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7n3-4u-fFv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUr-1O-Zfp">
+                                <rect key="frame" x="0.0" y="8" width="390" height="56"/>
+                                <color key="barTintColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="24"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Start" id="K9M-Gz-FhG">
+                                        <barButtonItem key="leftBarButtonItem" style="done" id="n5x-y6-ndm">
+                                            <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="large"/>
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="dismiss:" destination="AMD-6i-NMq" id="Lws-hL-fXD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ins_content" translatesAutoresizingMaskIntoConstraints="NO" id="2Pk-YU-pey">
+                                <rect key="frame" x="36" y="122" width="318" height="151"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="151" id="46h-y3-8cY"/>
+                                    <constraint firstAttribute="width" constant="318" id="pIm-aa-jNA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lightbulb" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FtA-L9-i2f">
+                                <rect key="frame" x="36" y="669" width="29" height="37"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33.329999999999998" id="Ca1-sh-OOj"/>
+                                    <constraint firstAttribute="width" constant="29" id="iUw-6w-Fvm"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" scale="medium" weight="bold"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have three parameters like this, right?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-ls-rqQ">
+                                <rect key="frame" x="36" y="84" width="318" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="4uZ-XN-Pao"/>
+                                    <constraint firstAttribute="width" constant="318" id="l1S-aH-cYU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now, this is how to use them!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQO-Qi-g42">
+                                <rect key="frame" x="36" y="289" width="318" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="318" id="N3k-SI-66w"/>
+                                    <constraint firstAttribute="height" constant="34" id="TRZ-kL-xnL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s_insP2_content" translatesAutoresizingMaskIntoConstraints="NO" id="DCa-k0-arc">
+                                <rect key="frame" x="36" y="327" width="318" height="319"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="319" id="BxX-dY-bBa"/>
+                                    <constraint firstAttribute="width" constant="318" id="pQO-4e-HXq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips: You can use your own style by ticking it on &quot;Filter&quot;" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Viq-WR-9bF">
+                                <rect key="frame" x="76" y="666" width="278" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="278" id="KeK-qr-Okv"/>
+                                    <constraint firstAttribute="height" constant="45" id="LCd-Do-Qax"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Signika-Light_Bold" family="Signika" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JKk-dp-8wQ"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NQO-Qi-g42" firstAttribute="centerX" secondItem="7n3-4u-fFv" secondAttribute="centerX" id="20f-12-yyH"/>
+                            <constraint firstItem="DCa-k0-arc" firstAttribute="centerX" secondItem="7n3-4u-fFv" secondAttribute="centerX" id="Cnk-RQ-bsm"/>
+                            <constraint firstItem="2Pk-YU-pey" firstAttribute="centerX" secondItem="7n3-4u-fFv" secondAttribute="centerX" id="Ehp-HJ-uBc"/>
+                            <constraint firstItem="Viq-WR-9bF" firstAttribute="top" secondItem="DCa-k0-arc" secondAttribute="bottom" constant="20" id="Fd4-CR-9mZ"/>
+                            <constraint firstItem="2Pk-YU-pey" firstAttribute="centerX" secondItem="7n3-4u-fFv" secondAttribute="centerX" id="Gah-Jt-GGU"/>
+                            <constraint firstItem="FtA-L9-i2f" firstAttribute="leading" secondItem="DCa-k0-arc" secondAttribute="leading" id="Iwb-A8-zx5"/>
+                            <constraint firstItem="FtA-L9-i2f" firstAttribute="top" secondItem="DCa-k0-arc" secondAttribute="bottom" constant="25" id="ax5-od-K8d"/>
+                            <constraint firstItem="Viq-WR-9bF" firstAttribute="trailing" secondItem="DCa-k0-arc" secondAttribute="trailing" id="c2K-IN-q0R"/>
+                            <constraint firstItem="uUr-1O-Zfp" firstAttribute="top" secondItem="JKk-dp-8wQ" secondAttribute="top" constant="8" id="cpV-9M-cn1"/>
+                            <constraint firstItem="rRe-ls-rqQ" firstAttribute="centerX" secondItem="7n3-4u-fFv" secondAttribute="centerX" id="gGJ-QB-Ypl"/>
+                            <constraint firstItem="uUr-1O-Zfp" firstAttribute="centerX" secondItem="7n3-4u-fFv" secondAttribute="centerX" id="gpv-Tr-UJC"/>
+                            <constraint firstItem="NQO-Qi-g42" firstAttribute="top" secondItem="2Pk-YU-pey" secondAttribute="bottom" constant="16" id="jGt-uy-4ke"/>
+                            <constraint firstItem="rRe-ls-rqQ" firstAttribute="top" secondItem="uUr-1O-Zfp" secondAttribute="bottom" constant="20" id="jmj-fh-Nlv"/>
+                            <constraint firstItem="2Pk-YU-pey" firstAttribute="top" secondItem="rRe-ls-rqQ" secondAttribute="bottom" constant="4" id="mZh-z5-dcw"/>
+                            <constraint firstItem="uUr-1O-Zfp" firstAttribute="trailing" secondItem="JKk-dp-8wQ" secondAttribute="trailing" id="xVL-XM-O1B"/>
+                            <constraint firstItem="DCa-k0-arc" firstAttribute="top" secondItem="NQO-Qi-g42" secondAttribute="bottom" constant="4" id="y0f-0G-QT5"/>
+                            <constraint firstItem="uUr-1O-Zfp" firstAttribute="leading" secondItem="JKk-dp-8wQ" secondAttribute="leading" id="yjD-Pj-Hxv"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="instructionP1" destination="2Pk-YU-pey" id="ov5-oo-Qea"/>
+                        <outlet property="instructionP2" destination="DCa-k0-arc" id="Cat-d5-6dO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGX-yT-OBZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1596.9230769230769" y="113.74407582938387"/>
+        </scene>
         <!--First Page View Controller-->
         <scene sceneID="gFF-2e-NNs">
             <objects>
@@ -356,6 +471,11 @@
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="dumHeader_Red_XL" width="375" height="685"/>
+        <image name="ins_content" width="310" height="147"/>
+        <image name="lightbulb" catalog="system" width="113" height="128"/>
+        <image name="line.horizontal.3.decrease.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="s_insP2_content" width="318" height="319"/>
         <image name="header_unset" width="1366" height="930"/>
         <image name="line.horizontal.3.decrease.circle.fill" catalog="system" width="128" height="121"/>
         <image name="randomButton_left" width="161" height="73"/>

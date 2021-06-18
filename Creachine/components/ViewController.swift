@@ -40,7 +40,13 @@ class ViewController: UIViewController, UITableViewDataSource{
             }
             
             isSetIdeaTapped = false
-            randomizeButton.isHidden = true
+//            randomizeButton.isHidden = true
+            randomizeButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            randomizeButton.setTitle("Start", for: .normal)
+            randomizeButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            randomizeButton.setImage(UIImage(systemName: "paintbrush.pointed"), for: .normal)
+            randomizeButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            
             setIdeaLabel.text = "Unset Idea"
             setIdeaLabel.textColor = .black
             
@@ -48,6 +54,7 @@ class ViewController: UIViewController, UITableViewDataSource{
             setIdeaButton.layer.shadowOffset = CGSize(width: 0, height: 5)
             setIdeaButton.layer.shadowOpacity = 0.3
             setIdeaButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            
             
             // MARK: - Backsound Set Idea
             let urlString = Bundle.main.path(forResource: "audio-end", ofType: "wav")
@@ -79,7 +86,13 @@ class ViewController: UIViewController, UITableViewDataSource{
                 cell.lockSetIdea(flag: false)
             }
             isSetIdeaTapped = true
-            randomizeButton.isHidden = false
+            //randomizeButton.isHidden = false
+            randomizeButton.backgroundColor = #colorLiteral(red: 0.9797316194, green: 0, blue: 0.0877129212, alpha: 1)
+            randomizeButton.setTitle("Randomize", for: .normal)
+            randomizeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+            randomizeButton.setImage(UIImage(systemName: "arrow.triangle.2.circlepath"), for: .normal)
+            randomizeButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            
             setIdeaLabel.text = "Set Idea"
             setIdeaLabel.textColor = .white
         }
@@ -105,47 +118,54 @@ class ViewController: UIViewController, UITableViewDataSource{
 	var isClicked = false
     var count: Int = 0
 	@IBAction func randomize(_ sender: UIButton) {
-        generateRandomNumber()
-		isClicked = true
-		
-		count = 0
         
-        for index in 0...2 {
-			if index == 0 {
-				//masukin buat content container
-				numbers[index] = Int.random(in: 0..<contentContainer.count)
-			}
-			else if index == 1 {
-				//masukin buat color container
-				numbers[index] = Int.random(in: 0..<colorContainer.count)
-			}
-			else if index == 2 {
-				//masukin buat style container
-				numbers[index] = Int.random(in: 0..<styleContainer.count)
-			}
-			
-        }
-        //print (numbers)
-        isTapped = true
-        promptTableView.reloadData()
         
-        // MARK: - Backsound Randomize
-        let urlString = Bundle.main.path(forResource: "audio", ofType: "m4a")
-
-        do{
-            try AVAudioSession.sharedInstance().setMode(.default)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-
-            guard let urlString = urlString else{ return  }
-
-            player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-
-            guard let player = player else{ return  }
-
-            player.play()
+        if isSetIdeaTapped == false{
+            self.performSegue(withIdentifier: "keInstruction", sender: self)
         }
-        catch{
-            print ("something wrong :(")
+        else{
+            generateRandomNumber()
+            
+            isClicked = true
+            count = 0
+            
+            for index in 0...2 {
+                if index == 0 {
+                    //masukin buat content container
+                    numbers[index] = Int.random(in: 0..<contentContainer.count)
+                }
+                else if index == 1 {
+                    //masukin buat color container
+                    numbers[index] = Int.random(in: 0..<colorContainer.count)
+                }
+                else if index == 2 {
+                    //masukin buat style container
+                    numbers[index] = Int.random(in: 0..<styleContainer.count)
+                }
+                
+            }
+            //print (numbers)
+            isTapped = true
+            promptTableView.reloadData()
+            
+            // MARK: - Backsound Randomize
+            let urlString = Bundle.main.path(forResource: "audio", ofType: "m4a")
+
+            do{
+                try AVAudioSession.sharedInstance().setMode(.default)
+                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+
+                guard let urlString = urlString else{ return  }
+
+                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+
+                guard let player = player else{ return  }
+
+                player.play()
+            }
+            catch{
+                print ("something wrong :(")
+            }
         }
     }
     
@@ -245,8 +265,6 @@ class ViewController: UIViewController, UITableViewDataSource{
             filterButton.layer.borderWidth = 4
             
         }
-        
-//        count = 0
     }
     //MARK: -SETUP TABLEVIEW
 	func numberOfSections(in tableView: UITableView) -> Int { return 3 }
