@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04410CFA2677008F00909C91 /* Signika-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04410CF92677008F00909C91 /* Signika-VariableFont_wght.ttf */; };
 		04410CFF2678D37D00909C91 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04410CFE2678D37D00909C91 /* launchScreen.swift */; };
+		04447B11267BE81E004095AC /* ins_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04447B10267BE81E004095AC /* ins_ViewController.swift */; };
 		3648FF83267A42E5009F9401 /* audio.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3648FF82267A42E5009F9401 /* audio.m4a */; };
 		3648FF86267A42FE009F9401 /* audio-end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3648FF85267A42FE009F9401 /* audio-end.wav */; };
 		5C51FDC326771CF1001D3138 /* Creachine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C51FDC126771CF1001D3138 /* Creachine.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		04410CF92677008F00909C91 /* Signika-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Signika-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		04410CFE2678D37D00909C91 /* launchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
+		04447B10267BE81E004095AC /* ins_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ins_ViewController.swift; sourceTree = "<group>"; };
 		3648FF82267A42E5009F9401 /* audio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = audio.m4a; sourceTree = "<group>"; };
 		3648FF85267A42FE009F9401 /* audio-end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "audio-end.wav"; sourceTree = "<group>"; };
 		5C51FDC226771CF1001D3138 /* Creachine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Creachine.xcdatamodel; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		5CD75088266DEC1400683363 = {
 			isa = PBXGroup;
 			children = (
+				04447B10267BE81E004095AC /* ins_ViewController.swift */,
 				5CD75093266DEC1400683363 /* Creachine */,
 				5CD75092266DEC1400683363 /* Products */,
 			);
@@ -276,6 +279,7 @@
 				5CD75097266DEC1400683363 /* SceneDelegate.swift in Sources */,
 				5CF59E6B2678E50D005F1D56 /* Category.swift in Sources */,
 				5C58FB78267792F200ACE1E7 /* Color.swift in Sources */,
+				04447B11267BE81E004095AC /* ins_ViewController.swift in Sources */,
 				5CFA9B402670EAFB0098C1C6 /* openFilterButton.swift in Sources */,
 				5CDD309F2671BFBF00C8011F /* dataSeeder.swift in Sources */,
 				5CFA9B432670FD970098C1C6 /* randomizeButon.swift in Sources */,
@@ -436,7 +440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nur.Creachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -455,7 +459,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nur.Creachine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
