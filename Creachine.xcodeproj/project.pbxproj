@@ -27,7 +27,6 @@
 		5CD750A1266DEC1500683363 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD750A0266DEC1500683363 /* Assets.xcassets */; };
 		5CD750A4266DEC1500683363 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CD750A2266DEC1500683363 /* LaunchScreen.storyboard */; };
 		5CDD309D2671B0C800C8011F /* firstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD309C2671B0C800C8011F /* firstPageViewController.swift */; };
-		5CDD309F2671BFBF00C8011F /* dataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD309E2671BFBF00C8011F /* dataSeeder.swift */; };
 		5CDD30B22671D70800C8011F /* filterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD30B02671D70800C8011F /* filterTableViewCell.swift */; };
 		5CDD30B32671D70800C8011F /* filterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDD30B12671D70800C8011F /* filterTableViewCell.xib */; };
 		5CF59E6B2678E50D005F1D56 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF59E6A2678E50D005F1D56 /* Category.swift */; };
@@ -58,7 +57,6 @@
 		5CD750A3266DEC1500683363 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CD750A5266DEC1500683363 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5CDD309C2671B0C800C8011F /* firstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstPageViewController.swift; sourceTree = "<group>"; };
-		5CDD309E2671BFBF00C8011F /* dataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataSeeder.swift; sourceTree = "<group>"; };
 		5CDD30B02671D70800C8011F /* filterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterTableViewCell.swift; sourceTree = "<group>"; };
 		5CDD30B12671D70800C8011F /* filterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = filterTableViewCell.xib; sourceTree = "<group>"; };
 		5CF59E6A2678E50D005F1D56 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -83,6 +81,18 @@
 				04410CF92677008F00909C91 /* Signika-VariableFont_wght.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		5C476AFF267CD96B007AB0A9 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CD75098266DEC1400683363 /* ViewController.swift */,
+				04447B10267BE81E004095AC /* ins_ViewController.swift */,
+				5C51FDC626772313001D3138 /* lockUnlock.swift */,
+				5C56D6DD2671DD8700A3F2BC /* filterViewController.swift */,
+				5CDD309C2671B0C800C8011F /* firstPageViewController.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		5C58FB74267792E200ACE1E7 /* Models */ = {
@@ -116,7 +126,6 @@
 		5CD75088266DEC1400683363 = {
 			isa = PBXGroup;
 			children = (
-				04447B10267BE81E004095AC /* ins_ViewController.swift */,
 				5CD75093266DEC1400683363 /* Creachine */,
 				5CD75092266DEC1400683363 /* Products */,
 			);
@@ -133,17 +142,16 @@
 		5CD75093266DEC1400683363 /* Creachine */ = {
 			isa = PBXGroup;
 			children = (
-				5CD75094266DEC1400683363 /* AppDelegate.swift */,
-				5CD75096266DEC1400683363 /* SceneDelegate.swift */,
 				5CFA9B3D2670EAA00098C1C6 /* components */,
-				5CD7509A266DEC1400683363 /* Main.storyboard */,
 				04410CFB2677009C00909C91 /* Font */,
-				5CDD309E2671BFBF00C8011F /* dataSeeder.swift */,
+				5CFA9B3E2670EAB60098C1C6 /* utilities */,
 				5CD750A0266DEC1500683363 /* Assets.xcassets */,
+				5CD7509A266DEC1400683363 /* Main.storyboard */,
 				5CD750A2266DEC1500683363 /* LaunchScreen.storyboard */,
 				04410CFE2678D37D00909C91 /* launchScreen.swift */,
+				5CD75094266DEC1400683363 /* AppDelegate.swift */,
+				5CD75096266DEC1400683363 /* SceneDelegate.swift */,
 				5CD750A5266DEC1500683363 /* Info.plist */,
-				5CFA9B3E2670EAB60098C1C6 /* utilities */,
 			);
 			path = Creachine;
 			sourceTree = "<group>";
@@ -162,13 +170,10 @@
 		5CFA9B3D2670EAA00098C1C6 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				5C476AFF267CD96B007AB0A9 /* controllers */,
 				5CFA9B412670EB050098C1C6 /* button */,
 				5CB282AE266E0CFE00D75A74 /* table view cell */,
 				5CDD30B42671D71400C8011F /* filterTableViewCell */,
-				5CD75098266DEC1400683363 /* ViewController.swift */,
-				5C51FDC626772313001D3138 /* lockUnlock.swift */,
-				5C56D6DD2671DD8700A3F2BC /* filterViewController.swift */,
-				5CDD309C2671B0C800C8011F /* firstPageViewController.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -281,7 +286,6 @@
 				5C58FB78267792F200ACE1E7 /* Color.swift in Sources */,
 				04447B11267BE81E004095AC /* ins_ViewController.swift in Sources */,
 				5CFA9B402670EAFB0098C1C6 /* openFilterButton.swift in Sources */,
-				5CDD309F2671BFBF00C8011F /* dataSeeder.swift in Sources */,
 				5CFA9B432670FD970098C1C6 /* randomizeButon.swift in Sources */,
 				5CDD30B22671D70800C8011F /* filterTableViewCell.swift in Sources */,
 			);
