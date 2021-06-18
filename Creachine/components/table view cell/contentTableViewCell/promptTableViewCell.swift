@@ -19,11 +19,9 @@ class promptTableViewCell: UITableViewCell {
 	@IBOutlet weak var lockButton: UIButton!
 	
 	var isActive: Bool = false
-	
 	var loading_1: UIImage!
 	var loading_2: UIImage!
 	var loading_3: UIImage!
-	
 	var imagesToAnimate: [UIImage]!
 	var animatedImages: UIImage!
 	
@@ -60,7 +58,6 @@ class promptTableViewCell: UITableViewCell {
             contentHeaderView.backgroundColor = .black
             lockButton.tintColor = .white
             lightAnimation.isHidden = true
-            
             contentSpinAnimationView.alpha = 0
         } else {
             lockButton.setImage(UIImage(systemName: "lock.open.fill"), for: .normal)
@@ -68,7 +65,6 @@ class promptTableViewCell: UITableViewCell {
             contentHeaderView.backgroundColor = UIColor(red: 128/255, green: 199/255, blue: 190/255, alpha: 1)
             lockButton.tintColor = .black
             lightAnimation.isHidden = false
-            
             contentSpinAnimationView.alpha = 1
         }
     }

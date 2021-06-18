@@ -23,9 +23,9 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
         colorCategoryContainer.removeAll()
         contentCategoryContainer.removeAll()
         styleCategoryContainer.removeAll()
-        print(contentCategoryContainer.count)
-		print(colorCategoryContainer.count)
-        print(styleCategoryContainer.count)
+//        print(contentCategoryContainer.count)
+//		print(colorCategoryContainer.count)
+//        print(styleCategoryContainer.count)
         filterTableView.reloadData()
 	}
     
@@ -77,11 +77,11 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 		let filterNib = UINib(nibName: "\(filterTableViewCell.self)", bundle: nil)
 		filterTableView.register(filterNib, forCellReuseIdentifier: "filterCell")
 		
-		
-		print(contentCategoryContainer)
-		print(colorCategoryContainer)
-		print(styleCategoryContainer)
-		
+
+//		print(contentCategoryContainer)
+//		print(colorCategoryContainer)
+//		print(styleCategoryContainer)
+//
 //		checkIfActive(dataToCheck: contentCategoryContainer)
 //		checkIfActive(dataToCheck: colorCategoryContainer)
 //		checkIfActive(dataToCheck: styleCategoryContainer)
@@ -312,7 +312,7 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 			destVC?.selectedColor = colorCategoryContainer
 			destVC?.selectedStyle = styleCategoryContainer
             destVC?.checkIfFiltered()
-			print("ini keluar dari filter view controller")
+			//print("ini keluar dari filter view controller")
 		} else {
 			print("identifier not found")
 		}
@@ -322,17 +322,4 @@ class filterViewController: UIViewController, UITableViewDataSource, getAppended
 }
 
 
-//extension filterViewController {
-//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//		if segue.identifier == "filterDataSegue" {
-//			let destVC = segue.destination as? ViewController
-//			destVC?.selectedContent = contentCategoryContainer
-//			destVC?.selectedColor = colorCategoryContainer
-//			destVC?.selectedStyle = styleCategoryContainer
-//			print("ini keluar dari filter view controller")
-//		} else {
-//			print("identifier not found")
-//		}
-//
-//	}
-//}
+

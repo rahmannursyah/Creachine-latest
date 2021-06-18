@@ -53,7 +53,8 @@ struct Style{
         Style(StyleCategory: "Cartoon", StyleDescription: "Phineas & Ferb", StyleReferenceImage: "style_Cartoon-8"),
         Style(StyleCategory: "Cartoon", StyleDescription: "Upin & Ipin", StyleReferenceImage: "style_Cartoon-9"),
             //Your Own Style
-        Style(StyleCategory: "Your Own", StyleDescription: "Your Own Style", StyleReferenceImage: "style_OwnStyle")
+        Style(StyleCategory: "(Your Own)", StyleDescription: "Your Own Style", StyleReferenceImage: "style_OwnStyle"),
+       
         ]
 		
 	//Total : 30

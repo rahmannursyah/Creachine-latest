@@ -25,13 +25,15 @@ class ViewController: UIViewController, UITableViewDataSource{
 	@IBOutlet weak var setIdeaButton: UIButton!
     @IBOutlet weak var setIdeaLabel: UILabel!
     @IBOutlet weak var filterButton: UIButton!
-	
+    @IBOutlet weak var headerImage: UIImageView!
+    
     var isSetIdeaTapped: Bool = true
 	@IBAction func setIdea(_ sender: Any) {
         if isSetIdeaTapped {
             // tapped "Set Idea" button
             setIdeaButton.backgroundColor = .white
             setIdeaButton.tintColor = .black
+         
             for index in 0 ... 2 {
                 let cell = promptTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! promptTableViewCell
                 cell.lockUnlockValidation(flag: true)
@@ -40,7 +42,6 @@ class ViewController: UIViewController, UITableViewDataSource{
             }
             
             isSetIdeaTapped = false
-//            randomizeButton.isHidden = true
             randomizeButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             randomizeButton.setTitle("Start", for: .normal)
             randomizeButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
@@ -54,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource{
             setIdeaButton.layer.shadowOffset = CGSize(width: 0, height: 5)
             setIdeaButton.layer.shadowOpacity = 0.3
             setIdeaButton.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            
+            headerImage.image = UIImage(named: "header_set")
             
             // MARK: - Backsound Set Idea
             let urlString = Bundle.main.path(forResource: "audio-end", ofType: "wav")
@@ -78,7 +79,7 @@ class ViewController: UIViewController, UITableViewDataSource{
         else {
             setIdeaButton.backgroundColor = .black
             setIdeaButton.tintColor = .white
-            
+            headerImage.image = UIImage(named: "header_unset")
             for index in 0 ... 2 {
                 let cell = promptTableView.cellForRow(at: IndexPath(row: 0, section: index)) as! promptTableViewCell
                 cell.lockUnlockValidation(flag: false)
@@ -99,7 +100,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 	}
     
     var isTapped: Bool = false
-    
+    var countLock: Int = 0
 	//Array untuk simpan static Data
 	var colorData: [Color] = Color.ColorData()
 	var contentData: [Content] = Content.ContentData()
@@ -117,6 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 	
 	var isClicked = false
     var count: Int = 0
+    var countLocked: Int = 0
 	@IBAction func randomize(_ sender: UIButton) {
         
         
@@ -144,7 +146,6 @@ class ViewController: UIViewController, UITableViewDataSource{
                 }
                 
             }
-            //print (numbers)
             isTapped = true
             promptTableView.reloadData()
             
@@ -173,7 +174,6 @@ class ViewController: UIViewController, UITableViewDataSource{
         for index in 0...2 {
             numbers[index] = Int.random(in: 0..<10)
         }
-        //print (numbers)
         isTapped = true
         promptTableView.reloadData()
     }
@@ -208,7 +208,6 @@ class ViewController: UIViewController, UITableViewDataSource{
 		filterContentData()
 		filterColorData()
 		filterStyleData()
-//		print(contentContainer[0].contentDescription)
 		
         //MARK: - CUSTOMIZE BUTTON
 		filterButton.layer.cornerRadius = 9
@@ -309,11 +308,7 @@ class ViewController: UIViewController, UITableViewDataSource{
 			cell.contentRandomLabel.text = styleContainer[numbers[2]].styleDescription
             }
 		}
-		
-//		removeAllStoredData()
-		
-        for index in 0...2{
-            if index == 0 {
+              
                 if indexPath.section == 0 {
                     if cell.isActive == false { // button: unlock
                         cell.animateBlinkLight()
@@ -321,22 +316,22 @@ class ViewController: UIViewController, UITableViewDataSource{
                         sequenceAnimation_0(cell: cell)
                     }
                 }
-                else if indexPath.section == 1 {
+                if indexPath.section == 1 {
                     if cell.isActive == false {
                         cell.animateBlinkLight()
                         spin123_1(cell: cell)
                         sequenceAnimation_1(cell: cell)
                     }
                 }
-                else if indexPath.section == 2 {
+                if indexPath.section == 2 {
                     if cell.isActive == false {
                         cell.animateBlinkLight()
                         spin123_2(cell: cell)
                         sequenceAnimation_2(cell: cell)
                     }
                 }
-            }
-        }
+     
+        
 		
 		return cell
 }
@@ -350,7 +345,6 @@ class ViewController: UIViewController, UITableViewDataSource{
 				styleData = styleData.filter { style in
 				if selectedStyle.contains(style.styleCategory!){
 					styleContainer.append(style)
-					//print(style.styleDescription!)
                 }
 				return true
 				}
@@ -573,10 +567,6 @@ extension ViewController {
 		filterVC?.styleCategoryContainer = selectedStyle
 		filterVC?.contentCategoryContainer = selectedContent
 		filterVC?.colorCategoryContainer = selectedColor
-//		print("masuk nih preparenya")
-//		print(selectedContent)
-//		print(selectedColor)
-//		print(selectedStyle)
 	}
     
 }

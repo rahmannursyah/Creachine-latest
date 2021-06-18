@@ -140,6 +140,7 @@
                     <connections>
                         <outlet property="borderView" destination="X5a-LB-JUc" id="dqL-wH-RwX"/>
                         <outlet property="filterButton" destination="VLS-Z0-JwN" id="LDm-6j-I8w"/>
+                        <outlet property="headerImage" destination="ULw-2E-2hB" id="rGX-qr-5lf"/>
                         <outlet property="promptTableView" destination="yqZ-8E-6B0" id="uKN-PG-gHe"/>
                         <outlet property="randomizeButton" destination="55b-qG-K7O" id="Gkt-V0-K04"/>
                         <outlet property="setIdeaButton" destination="5rA-gv-vkc" id="Sfq-uz-jnx"/>
@@ -471,14 +472,12 @@
         <image name="arrow.triangle.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
-        <image name="dumHeader_Red_XL" width="375" height="685"/>
+        <image name="header_unset" width="1366" height="930"/>
         <image name="ins_content" width="310" height="147"/>
         <image name="lightbulb" catalog="system" width="113" height="128"/>
         <image name="line.horizontal.3.decrease.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="s_insP2_content" width="318" height="319"/>
-        <image name="header_unset" width="1366" height="930"/>
-        <image name="line.horizontal.3.decrease.circle.fill" catalog="system" width="128" height="121"/>
         <image name="randomButton_left" width="161" height="73"/>
         <image name="randomButton_right" width="161" height="73"/>
+        <image name="s_insP2_content" width="318" height="319"/>
     </resources>
 </document>
